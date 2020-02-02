@@ -16,15 +16,12 @@ final class Main: Screen {
     typealias ViewControllerType = MainViewController
     
     static func presenter(controller: ViewControllerType, screenInput: MainInput, observer: AnyObserver<MainOutput>, uiInput: MainPresenterInput) -> (MainViewInput, [Disposable]) {
-        let date = BehaviorSubject<Date?>(value: nil)
+        var date: Date? = nil
         let hidden = uiInput.tap
             .flatMapLatest { Observable<Int>.timer(.seconds(3), scheduler: MainScheduler.instance).map { _ in true }.startWith(false) }.startWith(true)
-        let dateDisposable = uiInput.chooseDate
-            .withLatestFrom(date)
-            .flatMap { controller.use(Second.self, input: $0) }
-            .bind(to: date)
-        let dateText = date
-            .compactMap { $0 }
+        let dateText = uiInput.chooseDate
+            .flatMap { controller.use(Second.self, input: date) }
+            .do(onNext: { date = $0 })
             .map { date -> String in
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateStyle = .medium
@@ -36,7 +33,7 @@ final class Main: Screen {
                 hidden: hidden,
                 dateText: dateText
             ),
-            [dateDisposable]
+            []
         )
     }
 }
