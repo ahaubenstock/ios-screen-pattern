@@ -21,7 +21,7 @@ struct SecondViewInput {
 final class SecondViewController: UIViewController, ScreenViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
-    
+
     lazy private(set) var presenterInput = SecondPresenterInput(
         back: backButton.rx.tap.asObservable(),
         date: datePicker.rx.date.asObservable()

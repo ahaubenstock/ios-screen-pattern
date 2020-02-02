@@ -14,7 +14,7 @@ typealias MainOutput = Void
 final class Main: Screen {
     typealias ViewControllerType = MainViewController
     
-    static func presenter(controller: ViewControllerType, subject: PublishSubject<MainOutput>, input: MainPresenterInput) -> MainViewInput {
+    static func presenter(controller: ViewControllerType, observer: AnyObserver<MainOutput>, input: MainPresenterInput) -> (MainViewInput, [Disposable]) {
         let hidden = input.tap
             .flatMapLatest { Observable<Int>.timer(.seconds(3), scheduler: MainScheduler.instance).map { _ in true }.startWith(false) }.startWith(true)
         let dateText = input.chooseDate
@@ -25,9 +25,12 @@ final class Main: Screen {
                 dateFormatter.timeStyle = .none
                 return dateFormatter.string(from: date)
             }
-        return MainViewInput(
-            hidden: hidden,
-            dateText: dateText
+        return (
+            MainViewInput(
+                hidden: hidden,
+                dateText: dateText
+            ),
+            []
         )
     }
 }

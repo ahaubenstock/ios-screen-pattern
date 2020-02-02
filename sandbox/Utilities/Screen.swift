@@ -15,7 +15,7 @@ protocol Screen: class {
     associatedtype Output
     associatedtype ViewControllerType: ScreenViewController
     static func create() -> (UIViewController, Observable<Output>)
-    static func presenter(controller: ViewControllerType, subject: PublishSubject<Output>, input: ViewControllerType.PresenterInput) -> ViewControllerType.ViewInput
+    static func presenter(controller: ViewControllerType, observer: AnyObserver<Output>, input: ViewControllerType.PresenterInput) -> (ViewControllerType.ViewInput, [Disposable])
 }
 
 extension Screen {

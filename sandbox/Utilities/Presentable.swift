@@ -14,17 +14,23 @@ protocol Presentable: UIViewController {
     associatedtype ViewInput
     var presenterInput: PresenterInput { get }
     func bind(input: ViewInput) -> [Disposable]
-    func install<T>(subject: PublishSubject<T>, presenter: @escaping (Self, PublishSubject<T>, PresenterInput) -> ViewInput)
+    func install<T>(subject: PublishSubject<T>, presenter: @escaping (Self, AnyObserver<T>, PresenterInput) -> (ViewInput, [Disposable]))
 }
 
 extension Presentable {
-    func install<T>(subject: PublishSubject<T>, presenter: @escaping (Self, PublishSubject<T>, PresenterInput) -> ViewInput) {
-        _ = rx.methodInvoked(#selector(UIViewController.viewDidLoad))
+    func install<T>(subject: PublishSubject<T>, presenter: @escaping (Self, AnyObserver<T>, PresenterInput) -> (ViewInput, [Disposable])) {
+        weak var _self: Self! = self
+        let presenterOutput = rx.methodInvoked(#selector(UIViewController.viewDidLoad))
             .take(1)
-            .map { [unowned self] _ in self.presenterInput }
-            .map { [unowned self] in presenter(self, subject, $0) }
-            .map(bind)
-            .skipUntil(rx.deallocated)
+            .map { _ in _self.presenterInput }
+            .map { presenter(_self, subject.asObserver(), $0) }
+            .share(replay: 1)
+        let disposables = Observable.zip(
+                presenterOutput.map { $0.0 }.map { _self.bind(input: $0) },
+                presenterOutput.map { $0.1 }
+            ) { $0 + $1 }
+        _ = rx.deallocated
+            .withLatestFrom(disposables)
             .bind(onNext: {
                 $0.forEach { $0.dispose() }
             })
@@ -34,7 +40,7 @@ extension Presentable {
             .flatMap { _ in Observable<Int>.timer(.seconds(2), scheduler: MainScheduler.instance) }
             .takeUntil(rx.deallocated)
             .bind(onNext: { _ in
-                print("⚠️ Resources not released from `\(String(describing: Self.self))`")
+                print("⚠️ `\(String(describing: Self.self))` – not released")
             })
     }
 }

@@ -14,14 +14,15 @@ typealias SecondOutput = Date
 final class Second: Screen {
     typealias ViewControllerType = SecondViewController
     
-    static func presenter(controller: ViewControllerType, subject: PublishSubject<SecondOutput>, input: SecondPresenterInput) -> SecondViewInput {
-        _ = input.back
-            .bind(onNext: {
-                subject.onCompleted()
-            })
-        _ = input.date
-            .bind(to: subject)
-        return SecondViewInput(
+    static func presenter(controller: ViewControllerType, observer: AnyObserver<SecondOutput>, input: SecondPresenterInput) -> (SecondViewInput, [Disposable]) {
+        let back = input.back
+            .bind(onNext: observer.onCompleted)
+        let date = input.date
+            .bind(onNext: observer.onNext)
+        return (
+            SecondViewInput(
+            ),
+            [back, date]
         )
     }
 }
