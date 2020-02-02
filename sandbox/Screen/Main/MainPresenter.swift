@@ -9,16 +9,22 @@
 import UIKit
 import RxSwift
 
+typealias MainInput = Void
 typealias MainOutput = Void
 
 final class Main: Screen {
     typealias ViewControllerType = MainViewController
     
-    static func presenter(controller: ViewControllerType, observer: AnyObserver<MainOutput>, input: MainPresenterInput) -> (MainViewInput, [Disposable]) {
-        let hidden = input.tap
+    static func presenter(controller: ViewControllerType, screenInput: MainInput, observer: AnyObserver<MainOutput>, uiInput: MainPresenterInput) -> (MainViewInput, [Disposable]) {
+        let date = BehaviorSubject<Date?>(value: nil)
+        let hidden = uiInput.tap
             .flatMapLatest { Observable<Int>.timer(.seconds(3), scheduler: MainScheduler.instance).map { _ in true }.startWith(false) }.startWith(true)
-        let dateText = input.chooseDate
-            .flatMap { controller.use(Second.self) }
+        let dateDisposable = uiInput.chooseDate
+            .withLatestFrom(date)
+            .flatMap { controller.use(Second.self, input: $0) }
+            .bind(to: date)
+        let dateText = date
+            .compactMap { $0 }
             .map { date -> String in
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateStyle = .medium
@@ -30,7 +36,7 @@ final class Main: Screen {
                 hidden: hidden,
                 dateText: dateText
             ),
-            []
+            [dateDisposable]
         )
     }
 }

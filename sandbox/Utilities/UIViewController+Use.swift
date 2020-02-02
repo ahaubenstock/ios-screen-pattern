@@ -10,10 +10,18 @@ import UIKit
 import RxSwift
 
 extension UIViewController {
-    func use<T: Screen>(_ screen: T.Type) -> Observable<T.Output> {
-        let (vc, output) = screen.create()
+    func use<T: Screen>(_ screen: T.Type, input: T.Input) -> Observable<T.Output> {
+        let (vc, output) = screen.create(input: input)
         present(vc, animated: true, completion: nil)
         return output
             .do(onCompleted: { vc.dismiss(animated: true, completion: nil) })
+    }
+}
+
+// MARK: - Convenience
+
+extension UIViewController {
+    func use<T: Screen>(_ screen: T.Type) -> Observable<T.Output> where T.Input == Void {
+        return use(screen, input: ())
     }
 }

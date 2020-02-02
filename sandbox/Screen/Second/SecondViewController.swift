@@ -16,6 +16,7 @@ struct SecondPresenterInput {
 }
 
 struct SecondViewInput {
+    let start: Date
 }
 
 final class SecondViewController: UIViewController, ScreenViewController {
@@ -28,6 +29,7 @@ final class SecondViewController: UIViewController, ScreenViewController {
     )
 	
     func bind(input: SecondViewInput) -> [Disposable] {
+        datePicker.date = input.start
         return [
         ]
     }

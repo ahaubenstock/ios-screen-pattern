@@ -12,17 +12,49 @@ import RxSwift
 protocol ScreenViewController: Presentable, HasStoryboard {}
 
 protocol Screen: class {
+    associatedtype Input
     associatedtype Output
     associatedtype ViewControllerType: ScreenViewController
-    static func create() -> (UIViewController, Observable<Output>)
-    static func presenter(controller: ViewControllerType, observer: AnyObserver<Output>, input: ViewControllerType.PresenterInput) -> (ViewControllerType.ViewInput, [Disposable])
+    static func create(input: Input) -> (UIViewController, Observable<Output>)
+    static func presenter(controller: ViewControllerType, screenInput: Input, observer: AnyObserver<Output>, uiInput: ViewControllerType.PresenterInput) -> (ViewControllerType.ViewInput, [Disposable])
 }
 
 extension Screen {
-    static func create() -> (UIViewController, Observable<Output>) {
+    static func create(input: Input) -> (UIViewController, Observable<Output>) {
         let controller = ViewControllerType.fromStoryboard()
         let subject = PublishSubject<Output>()
-        controller.install(subject: subject, presenter: presenter)
+        let _presenter = { [unowned controller] uiInput in
+            presenter(controller: controller, screenInput: input, observer: subject.asObserver(), uiInput: uiInput)
+        }
+        controller.install(_presenter)
+        _ = subject
+            .materialize()
+            .filter { $0.isCompleted }
+            .flatMap { _ in Observable<Int>.timer(.seconds(2), scheduler: MainScheduler.instance) }
+            .takeUntil(controller.rx.deallocated)
+            .bind(onNext: { _ in
+                print("⚠️ `\(String(describing: Self.ViewControllerType.self))` – not released")
+            })
         return (controller, subject)
+    }
+}
+
+// MARK: - Convenience
+
+extension Screen where Input == Void {
+    static func create() -> (UIViewController, Observable<Output>) {
+        return create(input: ())
+    }
+}
+
+extension Screen where Output == Void {
+    static func create(input: Input) -> UIViewController {
+        return create(input: input).0
+    }
+}
+
+extension Screen where Input == Void, Output == Void {
+    static func create() -> UIViewController {
+        return create().0
     }
 }
