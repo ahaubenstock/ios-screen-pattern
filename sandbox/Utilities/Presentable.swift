@@ -28,5 +28,13 @@ extension Presentable {
             .bind(onNext: {
                 $0.forEach { $0.dispose() }
             })
+        _ = subject
+            .materialize()
+            .filter { $0.isCompleted }
+            .flatMap { _ in Observable<Int>.timer(.seconds(2), scheduler: MainScheduler.instance) }
+            .takeUntil(rx.deallocated)
+            .bind(onNext: { _ in
+                print("⚠️ Resources not released from `\(String(describing: Self.self))`")
+            })
     }
 }
