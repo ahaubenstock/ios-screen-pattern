@@ -21,7 +21,6 @@ extension Presentable {
     func install<T>(subject: PublishSubject<T>, presenter: @escaping (Self, AnyObserver<T>, PresenterInput) -> (ViewInput, [Disposable])) {
         weak var _self: Self! = self
         let presenterOutput = rx.methodInvoked(#selector(UIViewController.viewDidLoad))
-            .take(1)
             .map { _ in _self.presenterInput }
             .map { presenter(_self, subject.asObserver(), $0) }
             .share(replay: 1)
