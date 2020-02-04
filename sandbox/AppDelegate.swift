@@ -14,10 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let navigation = UINavigationController(rootViewController: Main.create())
+        let (vc, _) = Main.create()
+        let navigation = UINavigationController(rootViewController: vc)
+        navigation.isNavigationBarHidden = true
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
-        
         #if DEBUG
         _ = Observable<Int>.interval(.milliseconds(500), scheduler: MainScheduler.instance)
             .map { _ in RxSwift.Resources.total }

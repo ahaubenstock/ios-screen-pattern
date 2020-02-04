@@ -35,9 +35,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xn1-kz-xsW">
+                                <rect key="frame" x="171.5" y="306" width="71" height="30"/>
+                                <state key="normal" title="go to third"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="xn1-kz-xsW" firstAttribute="top" secondItem="bcH-M2-Ri9" secondAttribute="bottom" constant="50" id="3vy-io-200"/>
                             <constraint firstItem="1JQ-RF-Fea" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="AJu-bt-3Ff"/>
                             <constraint firstItem="Qbq-zU-Jak" firstAttribute="top" secondItem="geX-RP-BXs" secondAttribute="top" constant="20" id="BVv-i0-gQO"/>
                             <constraint firstItem="cHU-Id-w42" firstAttribute="top" secondItem="1JQ-RF-Fea" secondAttribute="bottom" constant="50" id="Dq3-7D-fDR"/>
@@ -45,6 +50,7 @@
                             <constraint firstItem="Qbq-zU-Jak" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="Fk2-9w-5R1"/>
                             <constraint firstItem="bcH-M2-Ri9" firstAttribute="top" secondItem="cHU-Id-w42" secondAttribute="bottom" constant="20" id="LiZ-0c-e8y"/>
                             <constraint firstItem="cHU-Id-w42" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="SlL-av-p5G"/>
+                            <constraint firstItem="xn1-kz-xsW" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="mni-HU-9Yh"/>
                             <constraint firstItem="1JQ-RF-Fea" firstAttribute="top" secondItem="Qbq-zU-Jak" secondAttribute="bottom" constant="20" id="zfY-8j-gNj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="geX-RP-BXs"/>
@@ -53,6 +59,7 @@
                         <outlet property="button" destination="Qbq-zU-Jak" id="Btc-1L-mZe"/>
                         <outlet property="chooseDateButton" destination="cHU-Id-w42" id="f8M-4k-cEB"/>
                         <outlet property="dateLabel" destination="bcH-M2-Ri9" id="ZJn-Za-ekQ"/>
+                        <outlet property="goToThirdButton" destination="xn1-kz-xsW" id="Huu-EW-tsf"/>
                         <outlet property="label" destination="1JQ-RF-Fea" id="c1c-WV-3AD"/>
                     </connections>
                 </viewController>

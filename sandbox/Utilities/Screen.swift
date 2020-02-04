@@ -38,23 +38,8 @@ extension Screen {
         return (controller, subject)
     }
 }
-
-// MARK: - Convenience
-
 extension Screen where Input == Void {
     static func create() -> (UIViewController, Observable<Output>) {
         return create(input: ())
-    }
-}
-
-extension Screen where Output == Void {
-    static func create(input: Input) -> UIViewController {
-        return create(input: input).0
-    }
-}
-
-extension Screen where Input == Void, Output == Void {
-    static func create() -> UIViewController {
-        return create().0
     }
 }

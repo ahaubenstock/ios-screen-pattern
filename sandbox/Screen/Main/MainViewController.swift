@@ -13,6 +13,7 @@ import RxCocoa
 struct MainPresenterInput {
     let tap: Observable<Void>
     let chooseDate: Observable<Void>
+    let third: Observable<Void>
 }
 
 struct MainViewInput {
@@ -25,10 +26,12 @@ final class MainViewController: UIViewController, ScreenViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var chooseDateButton: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var goToThirdButton: UIButton!
     
     lazy private(set) var presenterInput = MainPresenterInput(
         tap: button.rx.tap.asObservable(),
-        chooseDate: chooseDateButton.rx.tap.asObservable()
+        chooseDate: chooseDateButton.rx.tap.asObservable(),
+        third: goToThirdButton.rx.tap.asObservable()
     )
 	
     func bind(input: MainViewInput) -> [Disposable] {
