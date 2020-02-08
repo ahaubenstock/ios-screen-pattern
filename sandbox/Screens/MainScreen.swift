@@ -28,10 +28,15 @@ final class MainScreen: Screen {
         let third = component.goToThirdButton.rx.tap
             .flatMap(use(ThirdScreen.self, from: component))
             .bind(to: component.choiceLabel.rx.text)
+        let profile = component.makeProfileButton.rx.tap
+            .flatMap(use(ProfileScreen.self, from: component))
+            .map { "\($0)" }
+            .bind(to: component.profileLabel.rx.text)
         return [
             hidden,
             dateText,
-            third
+            third,
+            profile
         ]
     }
 }

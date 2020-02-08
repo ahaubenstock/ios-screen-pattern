@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B22371923EF1FC1001EE229 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22371823EF1FC1001EE229 /* ProfileScreen.swift */; };
+		2B22371C23EF1FDD001EE229 /* NameComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22371A23EF1FDD001EE229 /* NameComponent.swift */; };
+		2B22371D23EF1FDD001EE229 /* NameComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B22371B23EF1FDD001EE229 /* NameComponent.storyboard */; };
+		2B22371F23EF2131001EE229 /* DateOfBirthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22371E23EF2131001EE229 /* DateOfBirthScreen.swift */; };
+		2B22372223EF23B6001EE229 /* SexPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22372023EF23B6001EE229 /* SexPickerComponent.swift */; };
+		2B22372323EF23B6001EE229 /* SexPickerComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B22372123EF23B6001EE229 /* SexPickerComponent.storyboard */; };
+		2B22372523EF2411001EE229 /* SexPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22372423EF2411001EE229 /* SexPickerScreen.swift */; };
 		2B43B5A623E5ED94006284AC /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B43B5A323E5ED94006284AC /* MainScreen.swift */; };
 		2B43B5A723E5ED94006284AC /* MainComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B43B5A423E5ED94006284AC /* MainComponent.swift */; };
 		2B4BA88E23DFE95700BCA3F0 /* MainComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4BA88D23DFE95700BCA3F0 /* MainComponent.storyboard */; };
 		2B61E83523E65E2C0043652A /* SecondScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B61E83323E65E2C0043652A /* SecondScreen.swift */; };
-		2B61E83623E65E2C0043652A /* SecondComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B61E83423E65E2C0043652A /* SecondComponent.swift */; };
-		2B61E83823E65E420043652A /* SecondComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B61E83723E65E410043652A /* SecondComponent.storyboard */; };
+		2B61E83623E65E2C0043652A /* DatePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B61E83423E65E2C0043652A /* DatePickerComponent.swift */; };
+		2B61E83823E65E420043652A /* DatePickerComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B61E83723E65E410043652A /* DatePickerComponent.storyboard */; };
 		2B6D741023DFE50F003E73CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D740F23DFE50F003E73CC /* AppDelegate.swift */; };
 		2B6D741923DFE511003E73CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B6D741823DFE511003E73CC /* Assets.xcassets */; };
 		2B6D741C23DFE511003E73CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B6D741A23DFE511003E73CC /* LaunchScreen.storyboard */; };
@@ -28,12 +35,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B22371823EF1FC1001EE229 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		2B22371A23EF1FDD001EE229 /* NameComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameComponent.swift; sourceTree = "<group>"; };
+		2B22371B23EF1FDD001EE229 /* NameComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NameComponent.storyboard; sourceTree = "<group>"; };
+		2B22371E23EF2131001EE229 /* DateOfBirthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfBirthScreen.swift; sourceTree = "<group>"; };
+		2B22372023EF23B6001EE229 /* SexPickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexPickerComponent.swift; sourceTree = "<group>"; };
+		2B22372123EF23B6001EE229 /* SexPickerComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SexPickerComponent.storyboard; sourceTree = "<group>"; };
+		2B22372423EF2411001EE229 /* SexPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexPickerScreen.swift; sourceTree = "<group>"; };
 		2B43B5A323E5ED94006284AC /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		2B43B5A423E5ED94006284AC /* MainComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainComponent.swift; sourceTree = "<group>"; };
 		2B4BA88D23DFE95700BCA3F0 /* MainComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainComponent.storyboard; sourceTree = "<group>"; };
 		2B61E83323E65E2C0043652A /* SecondScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreen.swift; sourceTree = "<group>"; };
-		2B61E83423E65E2C0043652A /* SecondComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondComponent.swift; sourceTree = "<group>"; };
-		2B61E83723E65E410043652A /* SecondComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondComponent.storyboard; sourceTree = "<group>"; };
+		2B61E83423E65E2C0043652A /* DatePickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerComponent.swift; sourceTree = "<group>"; };
+		2B61E83723E65E410043652A /* DatePickerComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DatePickerComponent.storyboard; sourceTree = "<group>"; };
 		2B6D740C23DFE50F003E73CC /* sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B6D740F23DFE50F003E73CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B6D741823DFE511003E73CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,12 +83,16 @@
 			children = (
 				2B43B5A423E5ED94006284AC /* MainComponent.swift */,
 				2B4BA88D23DFE95700BCA3F0 /* MainComponent.storyboard */,
-				2B61E83423E65E2C0043652A /* SecondComponent.swift */,
-				2B61E83723E65E410043652A /* SecondComponent.storyboard */,
+				2B61E83423E65E2C0043652A /* DatePickerComponent.swift */,
+				2B61E83723E65E410043652A /* DatePickerComponent.storyboard */,
 				2B71E1A423EE641000A23147 /* ThirdComponent.swift */,
 				2B71E1A523EE641000A23147 /* ThirdComponent.storyboard */,
 				2BD835FD23EE6A5D00884D33 /* FourthComponent.swift */,
 				2BD835FE23EE6A5D00884D33 /* FourthComponent.storyboard */,
+				2B22371A23EF1FDD001EE229 /* NameComponent.swift */,
+				2B22371B23EF1FDD001EE229 /* NameComponent.storyboard */,
+				2B22372023EF23B6001EE229 /* SexPickerComponent.swift */,
+				2B22372123EF23B6001EE229 /* SexPickerComponent.storyboard */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -118,6 +136,9 @@
 				2B61E83323E65E2C0043652A /* SecondScreen.swift */,
 				2B71E1A823EE647500A23147 /* ThirdScreen.swift */,
 				2BD8360123EE6B0400884D33 /* FourthScreen.swift */,
+				2B22371823EF1FC1001EE229 /* ProfileScreen.swift */,
+				2B22371E23EF2131001EE229 /* DateOfBirthScreen.swift */,
+				2B22372423EF2411001EE229 /* SexPickerScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -209,9 +230,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B6D741C23DFE511003E73CC /* LaunchScreen.storyboard in Resources */,
-				2B61E83823E65E420043652A /* SecondComponent.storyboard in Resources */,
+				2B61E83823E65E420043652A /* DatePickerComponent.storyboard in Resources */,
 				2BD8360023EE6A5D00884D33 /* FourthComponent.storyboard in Resources */,
 				2B71E1A723EE641000A23147 /* ThirdComponent.storyboard in Resources */,
+				2B22371D23EF1FDD001EE229 /* NameComponent.storyboard in Resources */,
+				2B22372323EF23B6001EE229 /* SexPickerComponent.storyboard in Resources */,
 				2B4BA88E23DFE95700BCA3F0 /* MainComponent.storyboard in Resources */,
 				2B6D741923DFE511003E73CC /* Assets.xcassets in Resources */,
 			);
@@ -266,16 +289,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B61E83623E65E2C0043652A /* SecondComponent.swift in Sources */,
+				2B61E83623E65E2C0043652A /* DatePickerComponent.swift in Sources */,
+				2B22372223EF23B6001EE229 /* SexPickerComponent.swift in Sources */,
 				2B6D741023DFE50F003E73CC /* AppDelegate.swift in Sources */,
 				2B71E1A323EE640600A23147 /* Routing.swift in Sources */,
+				2B22372523EF2411001EE229 /* SexPickerScreen.swift in Sources */,
 				2BD835FF23EE6A5D00884D33 /* FourthComponent.swift in Sources */,
 				2B43B5A623E5ED94006284AC /* MainScreen.swift in Sources */,
 				2B71E1A923EE647500A23147 /* ThirdScreen.swift in Sources */,
 				2B61E83523E65E2C0043652A /* SecondScreen.swift in Sources */,
+				2B22371C23EF1FDD001EE229 /* NameComponent.swift in Sources */,
+				2B22371923EF1FC1001EE229 /* ProfileScreen.swift in Sources */,
 				2B71E1A623EE641000A23147 /* ThirdComponent.swift in Sources */,
 				2BD8360223EE6B0400884D33 /* FourthScreen.swift in Sources */,
 				2B43B5A723E5ED94006284AC /* MainComponent.swift in Sources */,
+				2B22371F23EF2131001EE229 /* DateOfBirthScreen.swift in Sources */,
 				2B71E1A223EE640600A23147 /* Screen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

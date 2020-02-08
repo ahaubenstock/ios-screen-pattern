@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bgJ-lj-gMb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sex Picker Component-->
+        <scene sceneID="JcH-G2-w8h">
+            <objects>
+                <viewController id="bgJ-lj-gMb" customClass="SexPickerComponent" customModule="sandbox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4co-bW-1gO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ue6-AC-9zM">
+                                <rect key="frame" x="20" y="59.5" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pick a sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6U-jf-GSY">
+                                <rect key="frame" x="169" y="64" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tw9-oA-GKv">
+                                <rect key="frame" x="146.5" y="105" width="121" height="32"/>
+                                <segments>
+                                    <segment title="male"/>
+                                    <segment title="female"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rw7-1B-wlC">
+                                <rect key="frame" x="188.5" y="156" width="37" height="30"/>
+                                <state key="normal" title="finish"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="c6U-jf-GSY" firstAttribute="centerX" secondItem="4co-bW-1gO" secondAttribute="centerX" id="5qD-bx-tdG"/>
+                            <constraint firstItem="tw9-oA-GKv" firstAttribute="centerX" secondItem="4co-bW-1gO" secondAttribute="centerX" id="Ddf-BS-muF"/>
+                            <constraint firstItem="Rw7-1B-wlC" firstAttribute="centerX" secondItem="4co-bW-1gO" secondAttribute="centerX" id="Wjv-eM-zXH"/>
+                            <constraint firstItem="Ue6-AC-9zM" firstAttribute="leading" secondItem="qOn-CU-MyF" secondAttribute="leading" constant="20" id="Y3D-Ig-Rom"/>
+                            <constraint firstItem="tw9-oA-GKv" firstAttribute="top" secondItem="c6U-jf-GSY" secondAttribute="bottom" constant="20" id="hfG-X7-kWk"/>
+                            <constraint firstItem="c6U-jf-GSY" firstAttribute="top" secondItem="qOn-CU-MyF" secondAttribute="top" constant="20" id="koz-aB-efk"/>
+                            <constraint firstItem="Ue6-AC-9zM" firstAttribute="centerY" secondItem="c6U-jf-GSY" secondAttribute="centerY" id="ogW-mL-Txl"/>
+                            <constraint firstItem="Rw7-1B-wlC" firstAttribute="top" secondItem="tw9-oA-GKv" secondAttribute="bottom" constant="20" id="viS-mO-NYm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qOn-CU-MyF"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="Ue6-AC-9zM" id="PY0-e6-kOg"/>
+                        <outlet property="doneButton" destination="Rw7-1B-wlC" id="onf-Om-eG2"/>
+                        <outlet property="segmentedControl" destination="tw9-oA-GKv" id="cUA-49-7v9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="628-co-hud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="87" y="92"/>
+        </scene>
+    </scenes>
+</document>

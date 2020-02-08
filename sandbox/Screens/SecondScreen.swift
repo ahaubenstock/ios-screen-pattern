@@ -11,15 +11,16 @@ import RxSwift
 import RxCocoa
 
 final class SecondScreen: Screen {
-    static func addLogic(to component: SecondComponent, input: Date?, observer: AnyObserver<Date>) -> [Disposable] {
+    static func addLogic(to component: DatePickerComponent, input: Date?, observer: AnyObserver<Date>) -> [Disposable] {
+        component.nextButton.isHidden = true
         let back = component.backButton.rx.tap
-            .bind(onNext: observer.onCompleted)
-        component.datePicker.date = input ?? Date()
-        let date = component.datePicker.rx.date
-            .bind(onNext: observer.onNext)
+            .withLatestFrom(component.datePicker.rx.date)
+            .bind(onNext: {
+                observer.onNext($0)
+                observer.onCompleted()
+            })
         return [
-            back,
-            date
+            back
         ]
     }
 }

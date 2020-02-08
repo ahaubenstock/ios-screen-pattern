@@ -45,17 +45,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOR-x4-zSD">
+                                <rect key="frame" x="164.5" y="427" width="85" height="30"/>
+                                <state key="normal" title="make profile"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="no profile made" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQn-My-tXd">
+                                <rect key="frame" x="107" y="477" width="200" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ryg-zC-l8y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xn1-kz-xsW" firstAttribute="top" secondItem="bcH-M2-Ri9" secondAttribute="bottom" constant="50" id="3vy-io-200"/>
+                            <constraint firstItem="xQn-My-tXd" firstAttribute="top" secondItem="XOR-x4-zSD" secondAttribute="bottom" constant="20" id="5Q2-xe-ob7"/>
                             <constraint firstItem="1JQ-RF-Fea" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="AJu-bt-3Ff"/>
                             <constraint firstItem="Qbq-zU-Jak" firstAttribute="top" secondItem="geX-RP-BXs" secondAttribute="top" constant="20" id="BVv-i0-gQO"/>
                             <constraint firstItem="cHU-Id-w42" firstAttribute="top" secondItem="1JQ-RF-Fea" secondAttribute="bottom" constant="50" id="Dq3-7D-fDR"/>
                             <constraint firstItem="bcH-M2-Ri9" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="FYd-2Z-ww9"/>
                             <constraint firstItem="Qbq-zU-Jak" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="Fk2-9w-5R1"/>
+                            <constraint firstItem="XOR-x4-zSD" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="G98-aq-UTB"/>
                             <constraint firstItem="bcH-M2-Ri9" firstAttribute="top" secondItem="cHU-Id-w42" secondAttribute="bottom" constant="20" id="LiZ-0c-e8y"/>
                             <constraint firstItem="cHU-Id-w42" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="SlL-av-p5G"/>
+                            <constraint firstItem="XOR-x4-zSD" firstAttribute="top" secondItem="VTy-FI-hmX" secondAttribute="bottom" constant="50" id="VzK-GK-24y"/>
+                            <constraint firstItem="xQn-My-tXd" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="Xjb-1n-Mx4"/>
                             <constraint firstItem="VTy-FI-hmX" firstAttribute="top" secondItem="xn1-kz-xsW" secondAttribute="bottom" constant="20" id="hxi-Br-jEz"/>
                             <constraint firstItem="xn1-kz-xsW" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="mni-HU-9Yh"/>
                             <constraint firstItem="VTy-FI-hmX" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="uXr-an-W6w"/>
@@ -70,6 +87,8 @@
                         <outlet property="dateLabel" destination="bcH-M2-Ri9" id="ZJn-Za-ekQ"/>
                         <outlet property="goToThirdButton" destination="xn1-kz-xsW" id="Huu-EW-tsf"/>
                         <outlet property="label" destination="1JQ-RF-Fea" id="c1c-WV-3AD"/>
+                        <outlet property="makeProfileButton" destination="XOR-x4-zSD" id="ZOK-nl-7QQ"/>
+                        <outlet property="profileLabel" destination="xQn-My-tXd" id="WkC-UY-lw4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wtI-et-09y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
