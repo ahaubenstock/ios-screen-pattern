@@ -10,12 +10,19 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class ThirdScreen: Screen {
-    static func addLogic(to component: ThirdComponent, input: Void, observer: AnyObserver<Void>) -> [Disposable] {
-        let back = component.backButton.rx.tap
+final class ThirdScreen: Flow {
+    static func addLogic(to component: ThirdComponent, input: Void, observer: AnyObserver<String>) -> [Disposable] {
+        let cancel = component.cancelButton.rx.tap
             .bind(onNext: observer.onCompleted)
+        let choice = component.goToFourthButton.rx.tap
+            .flatMap(flow(to: FourthScreen.self, from: component))
+            .bind(onNext: {
+                observer.onNext($0)
+                observer.onCompleted()
+            })
         return [
-            back
+            cancel,
+            choice
         ]
     }
 }

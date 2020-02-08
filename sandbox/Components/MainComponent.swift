@@ -14,4 +14,5 @@ class MainComponent: Component {
     @IBOutlet weak var chooseDateButton: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var goToThirdButton: UIButton!
+    @IBOutlet weak var choiceLabel: UILabel!
 }

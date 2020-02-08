@@ -21,6 +21,9 @@
 		2B71E1A623EE641000A23147 /* ThirdComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B71E1A423EE641000A23147 /* ThirdComponent.swift */; };
 		2B71E1A723EE641000A23147 /* ThirdComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B71E1A523EE641000A23147 /* ThirdComponent.storyboard */; };
 		2B71E1A923EE647500A23147 /* ThirdScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B71E1A823EE647500A23147 /* ThirdScreen.swift */; };
+		2BD835FF23EE6A5D00884D33 /* FourthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD835FD23EE6A5D00884D33 /* FourthComponent.swift */; };
+		2BD8360023EE6A5D00884D33 /* FourthComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BD835FE23EE6A5D00884D33 /* FourthComponent.storyboard */; };
+		2BD8360223EE6B0400884D33 /* FourthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8360123EE6B0400884D33 /* FourthScreen.swift */; };
 		B235EBBE957B9CADE900D7AD /* Pods_sandbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9D2E72F136719F7FB262C2 /* Pods_sandbox.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,9 @@
 		2B71E1A423EE641000A23147 /* ThirdComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdComponent.swift; sourceTree = "<group>"; };
 		2B71E1A523EE641000A23147 /* ThirdComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThirdComponent.storyboard; sourceTree = "<group>"; };
 		2B71E1A823EE647500A23147 /* ThirdScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdScreen.swift; sourceTree = "<group>"; };
+		2BD835FD23EE6A5D00884D33 /* FourthComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthComponent.swift; sourceTree = "<group>"; };
+		2BD835FE23EE6A5D00884D33 /* FourthComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FourthComponent.storyboard; sourceTree = "<group>"; };
+		2BD8360123EE6B0400884D33 /* FourthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthScreen.swift; sourceTree = "<group>"; };
 		3D9D2E72F136719F7FB262C2 /* Pods_sandbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sandbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D04B2A5198A29683C8024D7 /* Pods-sandbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sandbox.release.xcconfig"; path = "Target Support Files/Pods-sandbox/Pods-sandbox.release.xcconfig"; sourceTree = "<group>"; };
 		B51EBA41E855C6EE69F192AC /* Pods-sandbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sandbox.debug.xcconfig"; path = "Target Support Files/Pods-sandbox/Pods-sandbox.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +73,8 @@
 				2B61E83723E65E410043652A /* SecondComponent.storyboard */,
 				2B71E1A423EE641000A23147 /* ThirdComponent.swift */,
 				2B71E1A523EE641000A23147 /* ThirdComponent.storyboard */,
+				2BD835FD23EE6A5D00884D33 /* FourthComponent.swift */,
+				2BD835FE23EE6A5D00884D33 /* FourthComponent.storyboard */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -109,6 +117,7 @@
 				2B43B5A323E5ED94006284AC /* MainScreen.swift */,
 				2B61E83323E65E2C0043652A /* SecondScreen.swift */,
 				2B71E1A823EE647500A23147 /* ThirdScreen.swift */,
+				2BD8360123EE6B0400884D33 /* FourthScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -201,6 +210,7 @@
 			files = (
 				2B6D741C23DFE511003E73CC /* LaunchScreen.storyboard in Resources */,
 				2B61E83823E65E420043652A /* SecondComponent.storyboard in Resources */,
+				2BD8360023EE6A5D00884D33 /* FourthComponent.storyboard in Resources */,
 				2B71E1A723EE641000A23147 /* ThirdComponent.storyboard in Resources */,
 				2B4BA88E23DFE95700BCA3F0 /* MainComponent.storyboard in Resources */,
 				2B6D741923DFE511003E73CC /* Assets.xcassets in Resources */,
@@ -259,10 +269,12 @@
 				2B61E83623E65E2C0043652A /* SecondComponent.swift in Sources */,
 				2B6D741023DFE50F003E73CC /* AppDelegate.swift in Sources */,
 				2B71E1A323EE640600A23147 /* Routing.swift in Sources */,
+				2BD835FF23EE6A5D00884D33 /* FourthComponent.swift in Sources */,
 				2B43B5A623E5ED94006284AC /* MainScreen.swift in Sources */,
 				2B71E1A923EE647500A23147 /* ThirdScreen.swift in Sources */,
 				2B61E83523E65E2C0043652A /* SecondScreen.swift in Sources */,
 				2B71E1A623EE641000A23147 /* ThirdComponent.swift in Sources */,
+				2BD8360223EE6B0400884D33 /* FourthScreen.swift in Sources */,
 				2B43B5A723E5ED94006284AC /* MainComponent.swift in Sources */,
 				2B71E1A223EE640600A23147 /* Screen.swift in Sources */,
 			);

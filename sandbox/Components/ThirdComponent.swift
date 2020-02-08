@@ -9,5 +9,6 @@
 import UIKit
 
 class ThirdComponent: Component {
-    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var goToFourthButton: UIButton!
 }

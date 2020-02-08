@@ -15,7 +15,7 @@ final class MainScreen: Screen {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
-        var date: Date? = nil
+        var date: Date?
         let hidden = component.button.rx.tap
             .flatMapLatest { Observable<Int>.timer(.seconds(3), scheduler: MainScheduler.instance).map { _ in true }.startWith(false) }.startWith(true)
             .bind(to: component.label.rx.isHidden)
@@ -26,7 +26,8 @@ final class MainScreen: Screen {
             .map(dateFormatter.string)
             .bind(to: component.dateLabel.rx.text)
         let third = component.goToThirdButton.rx.tap
-            .bind(onNext: route(to: ThirdScreen.self, from: component))
+            .flatMap(use(ThirdScreen.self, from: component))
+            .bind(to: component.choiceLabel.rx.text)
         return [
             hidden,
             dateText,

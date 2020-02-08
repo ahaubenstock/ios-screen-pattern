@@ -39,6 +39,12 @@
                                 <rect key="frame" x="171.5" y="306" width="71" height="30"/>
                                 <state key="normal" title="go to third"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="no choice made" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTy-FI-hmX">
+                                <rect key="frame" x="146.5" y="356" width="121.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -50,13 +56,16 @@
                             <constraint firstItem="Qbq-zU-Jak" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="Fk2-9w-5R1"/>
                             <constraint firstItem="bcH-M2-Ri9" firstAttribute="top" secondItem="cHU-Id-w42" secondAttribute="bottom" constant="20" id="LiZ-0c-e8y"/>
                             <constraint firstItem="cHU-Id-w42" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="SlL-av-p5G"/>
+                            <constraint firstItem="VTy-FI-hmX" firstAttribute="top" secondItem="xn1-kz-xsW" secondAttribute="bottom" constant="20" id="hxi-Br-jEz"/>
                             <constraint firstItem="xn1-kz-xsW" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="mni-HU-9Yh"/>
+                            <constraint firstItem="VTy-FI-hmX" firstAttribute="centerX" secondItem="4g8-Uq-3tO" secondAttribute="centerX" id="uXr-an-W6w"/>
                             <constraint firstItem="1JQ-RF-Fea" firstAttribute="top" secondItem="Qbq-zU-Jak" secondAttribute="bottom" constant="20" id="zfY-8j-gNj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="geX-RP-BXs"/>
                     </view>
                     <connections>
                         <outlet property="button" destination="Qbq-zU-Jak" id="Btc-1L-mZe"/>
+                        <outlet property="choiceLabel" destination="VTy-FI-hmX" id="aYh-a2-iYB"/>
                         <outlet property="chooseDateButton" destination="cHU-Id-w42" id="f8M-4k-cEB"/>
                         <outlet property="dateLabel" destination="bcH-M2-Ri9" id="ZJn-Za-ekQ"/>
                         <outlet property="goToThirdButton" destination="xn1-kz-xsW" id="Huu-EW-tsf"/>
