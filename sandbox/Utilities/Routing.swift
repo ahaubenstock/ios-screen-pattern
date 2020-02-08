@@ -32,7 +32,6 @@ func use<T: Screen>(_ screen: T.Type, from component: Component) -> (T.Input) ->
 protocol Flow: Screen {
     static func flow<T: Screen>(to screen: T.Type, from component: Component) -> (T.Input) -> Observable<T.Output>
 }
-
 extension Flow {
     static func flow<T: Screen>(to screen: T.Type, from component: Component) -> (T.Input) -> Observable<T.Output> {
         return { [unowned component] input in
@@ -49,7 +48,6 @@ extension Flow {
         }
     }
 }
-
 func use<T: Flow>(_ flow: T.Type, from component: Component) -> (T.Input) -> Observable<T.Output> {
     return { [unowned component] input in
         let (_component, output) = flow.create(input: input)

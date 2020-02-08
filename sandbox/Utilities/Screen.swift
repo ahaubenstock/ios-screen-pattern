@@ -19,7 +19,6 @@ protocol Screen: class {
     static func create(input: Input) -> (Component, Observable<Output>)
     static func addLogic(to component: ComponentType, input: Input, observer: AnyObserver<Output>) -> [Disposable]
 }
-
 extension Screen {
     static func create(input: Input) -> (Component, Observable<Output>) {
         let component = UIStoryboard(name: String(describing: Self.ComponentType.self), bundle: nil).instantiateInitialViewController() as! ComponentType
