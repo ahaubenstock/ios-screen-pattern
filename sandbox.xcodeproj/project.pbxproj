@@ -7,40 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B1B0A8A23E6558000B18B06 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1B0A8923E6558000B18B06 /* Screen.swift */; };
 		2B43B5A623E5ED94006284AC /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B43B5A323E5ED94006284AC /* MainScreen.swift */; };
 		2B43B5A723E5ED94006284AC /* MainComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B43B5A423E5ED94006284AC /* MainComponent.swift */; };
 		2B4BA88E23DFE95700BCA3F0 /* MainComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4BA88D23DFE95700BCA3F0 /* MainComponent.storyboard */; };
 		2B61E83523E65E2C0043652A /* SecondScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B61E83323E65E2C0043652A /* SecondScreen.swift */; };
 		2B61E83623E65E2C0043652A /* SecondComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B61E83423E65E2C0043652A /* SecondComponent.swift */; };
 		2B61E83823E65E420043652A /* SecondComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B61E83723E65E410043652A /* SecondComponent.storyboard */; };
-		2B61E83A23E66DFE0043652A /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B61E83923E66DFE0043652A /* Routing.swift */; };
 		2B6D741023DFE50F003E73CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D740F23DFE50F003E73CC /* AppDelegate.swift */; };
 		2B6D741923DFE511003E73CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B6D741823DFE511003E73CC /* Assets.xcassets */; };
 		2B6D741C23DFE511003E73CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B6D741A23DFE511003E73CC /* LaunchScreen.storyboard */; };
-		2BF3F17A23E9258200ED273B /* ThirdScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF3F17723E9258200ED273B /* ThirdScreen.swift */; };
-		2BF3F17B23E9258200ED273B /* ThirdComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF3F17823E9258200ED273B /* ThirdComponent.storyboard */; };
-		2BF3F17C23E9258200ED273B /* ThirdComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF3F17923E9258200ED273B /* ThirdComponent.swift */; };
+		2B71E1A223EE640600A23147 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B71E1A023EE640600A23147 /* Screen.swift */; };
+		2B71E1A323EE640600A23147 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B71E1A123EE640600A23147 /* Routing.swift */; };
+		2B71E1A623EE641000A23147 /* ThirdComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B71E1A423EE641000A23147 /* ThirdComponent.swift */; };
+		2B71E1A723EE641000A23147 /* ThirdComponent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B71E1A523EE641000A23147 /* ThirdComponent.storyboard */; };
+		2B71E1A923EE647500A23147 /* ThirdScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B71E1A823EE647500A23147 /* ThirdScreen.swift */; };
 		B235EBBE957B9CADE900D7AD /* Pods_sandbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9D2E72F136719F7FB262C2 /* Pods_sandbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B1B0A8923E6558000B18B06 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		2B43B5A323E5ED94006284AC /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		2B43B5A423E5ED94006284AC /* MainComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainComponent.swift; sourceTree = "<group>"; };
 		2B4BA88D23DFE95700BCA3F0 /* MainComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainComponent.storyboard; sourceTree = "<group>"; };
 		2B61E83323E65E2C0043652A /* SecondScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreen.swift; sourceTree = "<group>"; };
 		2B61E83423E65E2C0043652A /* SecondComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondComponent.swift; sourceTree = "<group>"; };
 		2B61E83723E65E410043652A /* SecondComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondComponent.storyboard; sourceTree = "<group>"; };
-		2B61E83923E66DFE0043652A /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
 		2B6D740C23DFE50F003E73CC /* sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B6D740F23DFE50F003E73CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B6D741823DFE511003E73CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B6D741B23DFE511003E73CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B6D741D23DFE511003E73CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2BF3F17723E9258200ED273B /* ThirdScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdScreen.swift; sourceTree = "<group>"; };
-		2BF3F17823E9258200ED273B /* ThirdComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThirdComponent.storyboard; sourceTree = "<group>"; };
-		2BF3F17923E9258200ED273B /* ThirdComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdComponent.swift; sourceTree = "<group>"; };
+		2B71E1A023EE640600A23147 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		2B71E1A123EE640600A23147 /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		2B71E1A423EE641000A23147 /* ThirdComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdComponent.swift; sourceTree = "<group>"; };
+		2B71E1A523EE641000A23147 /* ThirdComponent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThirdComponent.storyboard; sourceTree = "<group>"; };
+		2B71E1A823EE647500A23147 /* ThirdScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdScreen.swift; sourceTree = "<group>"; };
 		3D9D2E72F136719F7FB262C2 /* Pods_sandbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sandbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D04B2A5198A29683C8024D7 /* Pods-sandbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sandbox.release.xcconfig"; path = "Target Support Files/Pods-sandbox/Pods-sandbox.release.xcconfig"; sourceTree = "<group>"; };
 		B51EBA41E855C6EE69F192AC /* Pods-sandbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sandbox.debug.xcconfig"; path = "Target Support Files/Pods-sandbox/Pods-sandbox.debug.xcconfig"; sourceTree = "<group>"; };
@@ -61,12 +61,12 @@
 		2B0F890223EE503F00F1F84C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2B4BA88D23DFE95700BCA3F0 /* MainComponent.storyboard */,
 				2B43B5A423E5ED94006284AC /* MainComponent.swift */,
-				2B61E83723E65E410043652A /* SecondComponent.storyboard */,
+				2B4BA88D23DFE95700BCA3F0 /* MainComponent.storyboard */,
 				2B61E83423E65E2C0043652A /* SecondComponent.swift */,
-				2BF3F17823E9258200ED273B /* ThirdComponent.storyboard */,
-				2BF3F17923E9258200ED273B /* ThirdComponent.swift */,
+				2B61E83723E65E410043652A /* SecondComponent.storyboard */,
+				2B71E1A423EE641000A23147 /* ThirdComponent.swift */,
+				2B71E1A523EE641000A23147 /* ThirdComponent.storyboard */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -108,7 +108,7 @@
 			children = (
 				2B43B5A323E5ED94006284AC /* MainScreen.swift */,
 				2B61E83323E65E2C0043652A /* SecondScreen.swift */,
-				2BF3F17723E9258200ED273B /* ThirdScreen.swift */,
+				2B71E1A823EE647500A23147 /* ThirdScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -116,8 +116,8 @@
 		2BFF50AA23E61D3B0044056A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2B1B0A8923E6558000B18B06 /* Screen.swift */,
-				2B61E83923E66DFE0043652A /* Routing.swift */,
+				2B71E1A023EE640600A23147 /* Screen.swift */,
+				2B71E1A123EE640600A23147 /* Routing.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -199,9 +199,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BF3F17B23E9258200ED273B /* ThirdComponent.storyboard in Resources */,
 				2B6D741C23DFE511003E73CC /* LaunchScreen.storyboard in Resources */,
 				2B61E83823E65E420043652A /* SecondComponent.storyboard in Resources */,
+				2B71E1A723EE641000A23147 /* ThirdComponent.storyboard in Resources */,
 				2B4BA88E23DFE95700BCA3F0 /* MainComponent.storyboard in Resources */,
 				2B6D741923DFE511003E73CC /* Assets.xcassets in Resources */,
 			);
@@ -257,14 +257,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B61E83623E65E2C0043652A /* SecondComponent.swift in Sources */,
-				2B1B0A8A23E6558000B18B06 /* Screen.swift in Sources */,
 				2B6D741023DFE50F003E73CC /* AppDelegate.swift in Sources */,
+				2B71E1A323EE640600A23147 /* Routing.swift in Sources */,
 				2B43B5A623E5ED94006284AC /* MainScreen.swift in Sources */,
-				2B61E83A23E66DFE0043652A /* Routing.swift in Sources */,
+				2B71E1A923EE647500A23147 /* ThirdScreen.swift in Sources */,
 				2B61E83523E65E2C0043652A /* SecondScreen.swift in Sources */,
-				2BF3F17C23E9258200ED273B /* ThirdComponent.swift in Sources */,
-				2BF3F17A23E9258200ED273B /* ThirdScreen.swift in Sources */,
+				2B71E1A623EE641000A23147 /* ThirdComponent.swift in Sources */,
 				2B43B5A723E5ED94006284AC /* MainComponent.swift in Sources */,
+				2B71E1A223EE640600A23147 /* Screen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
