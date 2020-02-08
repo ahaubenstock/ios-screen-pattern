@@ -9,11 +9,12 @@
 import UIKit
 import RxSwift
 
-func route<T: Screen>(to screen: T.Type, with navigation: UINavigationController) -> (T.Input) -> Void where T.Output == Void {
-    return { [unowned navigation] input in
-        let (vc, output) = screen.create(input: input)
+func route<T: Screen>(to screen: T.Type, from component: Component) -> (T.Input) -> Void where T.Output == Void {
+    return { [unowned component] input in
+        let navigation = component.navigationController!
+        let (_component, output) = screen.create(input: input)
         DispatchQueue.main.async {
-            navigation.pushViewController(vc, animated: true)
+            navigation.pushViewController(_component, animated: true)
             _ = output
                 .observeOn(MainScheduler.instance)
                 .subscribe(onCompleted: { navigation.popViewController(animated: true) })
@@ -21,17 +22,15 @@ func route<T: Screen>(to screen: T.Type, with navigation: UINavigationController
     }
 }
 
-func use<T: Screen>(_ screen: T.Type, from controller: UIViewController) -> (T.Input) -> Observable<T.Output> {
-    return { [unowned controller] input in
-        let (vc, output) = screen.create(input: input)
+func use<T: Screen>(_ screen: T.Type, from component: Component) -> (T.Input) -> Observable<T.Output> {
+    return { [unowned component] input in
+        let (_component, output) = screen.create(input: input)
         let shared = output
-            .share()
-            .replayAll()
         DispatchQueue.main.async {
-            controller.present(vc, animated: true, completion: nil)
+            component.present(_component, animated: true, completion: nil)
             _ = output
                 .observeOn(MainScheduler.instance)
-                .subscribe(onCompleted: { vc.dismiss(animated: true, completion: nil) })
+                .subscribe(onCompleted: { _component.dismiss(animated: true, completion: nil) })
         }
         return shared
     }

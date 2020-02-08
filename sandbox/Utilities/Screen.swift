@@ -8,38 +8,39 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
-protocol ScreenViewController: Presentable, HasStoryboard {}
+typealias Component = UIViewController
 
 protocol Screen: class {
     associatedtype Input
     associatedtype Output
-    associatedtype ViewControllerType: ScreenViewController
-    static func create(input: Input) -> (UIViewController, Observable<Output>)
-    static func presenter(controller: ViewControllerType, screenInput: Input, observer: AnyObserver<Output>, uiInput: ViewControllerType.PresenterInput) -> (ViewControllerType.ViewInput, [Disposable])
+    associatedtype ComponentType: Component
+    static func create(input: Input) -> (Component, Observable<Output>)
+    static func addLogic(to component: ComponentType, input: Input, observer: AnyObserver<Output>) -> [Disposable]
 }
 
 extension Screen {
-    static func create(input: Input) -> (UIViewController, Observable<Output>) {
-        let controller = ViewControllerType.fromStoryboard()
+    static func create(input: Input) -> (Component, Observable<Output>) {
+        let component = UIStoryboard(name: String(describing: Self.ComponentType.self), bundle: nil).instantiateInitialViewController() as! ComponentType
+        component.loadViewIfNeeded()
         let subject = PublishSubject<Output>()
-        let _presenter = { [unowned controller] uiInput in
-            presenter(controller: controller, screenInput: input, observer: subject.asObserver(), uiInput: uiInput)
-        }
-        controller.install(_presenter)
+        let disposables = addLogic(to: component, input: input, observer: subject.asObserver())
+        _ = component.rx.deallocated
+            .bind(onNext: { disposables.forEach { $0.dispose() } })
         _ = subject
             .materialize()
             .filter { $0.isCompleted }
             .flatMap { _ in Observable<Int>.timer(.seconds(2), scheduler: MainScheduler.instance) }
-            .takeUntil(controller.rx.deallocated)
+            .takeUntil(component.rx.deallocated)
             .bind(onNext: { _ in
-                print("⚠️ `\(String(describing: Self.ViewControllerType.self))` – not released")
+                print("⚠️ `\(String(describing: Self.ComponentType.self))` – not released")
             })
-        return (controller, subject)
+        return (component, subject)
     }
 }
 extension Screen where Input == Void {
-    static func create() -> (UIViewController, Observable<Output>) {
+    static func create() -> (Component, Observable<Output>) {
         return create(input: ())
     }
 }
