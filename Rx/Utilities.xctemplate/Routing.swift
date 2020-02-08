@@ -1,9 +1,9 @@
 //
-//  Routing.swift
-//  sandbox
+//  ___FILENAME___
+//  ___PROJECTNAME___
 //
-//  Created by Adam E. Haubenstock on 2/3/20.
-//  Copyright © 2020 Adam E. Haubenstock. All rights reserved.
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//  ___COPYRIGHT___
 //
 
 import UIKit
