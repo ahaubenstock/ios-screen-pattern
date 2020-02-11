@@ -10,6 +10,7 @@ import UIKit
 
 class DatePickerComponent: Component {
     @IBOutlet weak var backButton: UIButton!
+	@IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
 }

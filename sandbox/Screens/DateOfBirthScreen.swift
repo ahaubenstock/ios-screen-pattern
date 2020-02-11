@@ -12,6 +12,7 @@ import RxCocoa
 
 final class DateOfBirthScreen: Flow {
     static func addLogic(to component: DatePickerComponent, input: Profile, observer: AnyObserver<Profile>) -> [Disposable] {
+		component.headerLabel.text = "when is your birthday?"
         let back = component.backButton.rx.tap
             .bind(onNext: observer.onCompleted)
         let profile = component.datePicker.rx.date

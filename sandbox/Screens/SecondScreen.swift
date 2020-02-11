@@ -13,6 +13,7 @@ import RxCocoa
 final class SecondScreen: Screen {
     static func addLogic(to component: DatePickerComponent, input: Date?, observer: AnyObserver<Date>) -> [Disposable] {
         component.nextButton.isHidden = true
+		component.datePicker.date = input ?? Date()
         let back = component.backButton.rx.tap
             .withLatestFrom(component.datePicker.rx.date)
             .bind(onNext: {
