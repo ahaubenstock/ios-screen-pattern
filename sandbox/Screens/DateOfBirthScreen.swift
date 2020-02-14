@@ -23,7 +23,7 @@ final class DateOfBirthScreen: Flow {
             }
         let next = component.nextButton.rx.tap
             .withLatestFrom(profile)
-            .flatMap(flow(to: SexPickerScreen.self, from: component))
+            .flatMap(flow(to: PhoneNumberScreen.self, from: component))
             .bind(onNext: {
                 observer.onNext($0)
                 observer.onCompleted()

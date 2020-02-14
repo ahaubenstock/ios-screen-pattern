@@ -24,9 +24,10 @@ struct Profile {
     var name: Name
     var dateOfBirth: Date
     var sex: Sex
+	var phoneNumber: String
 }
 
-let emptyProfile = Profile(name: Name(first: "", last: ""), dateOfBirth: Date(), sex: .male)
+let emptyProfile = Profile(name: Name(first: "", last: ""), dateOfBirth: Date(), sex: .male, phoneNumber: "")
 
 final class ProfileScreen: Flow {
     static func addLogic(to component: NameComponent, input: Void, observer: AnyObserver<Profile>) -> [Disposable] {
