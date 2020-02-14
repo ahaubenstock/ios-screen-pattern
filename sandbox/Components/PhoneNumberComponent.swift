@@ -12,4 +12,5 @@ class PhoneNumberComponent: Component {
 	@IBOutlet weak var backButton: UIButton!
 	@IBOutlet weak var numberField: UITextField!
 	@IBOutlet weak var nextButton: UIButton!
+	@IBOutlet weak var invalidNumberLabel: UILabel!
 }

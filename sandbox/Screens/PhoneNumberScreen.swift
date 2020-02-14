@@ -36,18 +36,17 @@ final class PhoneNumberScreen: Flow {
 			.bind(onNext: observer.onCompleted)
 		let phoneNumber = BehaviorSubject(value: "")
 		let numberRaw = component.numberField.rx.text.orEmpty
-			.withLatestFrom(phoneNumber) { ($0, $1) }
-			.map { (text: String, phone: String) -> String in
-				var drop = 0
-				if text.count < format(phoneNumber: phone).count {
-					if text.count == 5 { drop = 2 }
-					if text.count == 9 { drop = 1 }
-				}
-				return String(text.dropLast(drop))
-			}
 			.map { $0.filter { $0.isNumber }.map { String($0) }.joined(separator: "") }
+			.withLatestFrom(phoneNumber) { ($0, $1) }
+			.filter { $0.0.count != $0.1.count }
+			.map { $0.0 }
+			.map { String($0.prefix(10)) }
 			.bind(to: phoneNumber)
-		let numberDisplay = phoneNumber
+		let numberDisplay = Observable.merge(
+				phoneNumber.map { _ in },
+				component.nextButton.rx.tap.asObservable()
+			)
+			.withLatestFrom(phoneNumber)
 			.map(format)
 			.bind(to: component.numberField.rx.text)
 		let profile = phoneNumber
@@ -56,7 +55,18 @@ final class PhoneNumberScreen: Flow {
 				p.phoneNumber = number
 				return p
 			}
+		let nextInvalid = component.nextButton.rx.tap
+			.withLatestFrom(phoneNumber)
+			.filter { $0.count != 10 }
+			.map { _ in false }
+		let fieldHideInvalid = component.numberField.rx.text
+			.map { _ in true }
+		let invalid = Observable.merge(nextInvalid, fieldHideInvalid)
+			.startWith(true)
+			.bind(to: component.invalidNumberLabel.rx.isHidden)
 		let next = component.nextButton.rx.tap
+			.withLatestFrom(phoneNumber)
+			.filter { $0.count == 10 }
 			.withLatestFrom(profile)
 			.flatMap(flow(to: SexPickerScreen.self, from: component))
 			.bind(onNext: {
@@ -67,6 +77,7 @@ final class PhoneNumberScreen: Flow {
 			back,
 			numberRaw,
 			numberDisplay,
+			invalid,
 			next
         ]
     }
